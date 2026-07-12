@@ -1,10 +1,10 @@
 default: build
 
 build:
-    go build -o jui .
+    go build -ldflags="-s -w" -o jui .
 
 install:
-    go install .
+    go install -ldflags="-s -w" .
 
 run *args:
     go run . {{args}}
